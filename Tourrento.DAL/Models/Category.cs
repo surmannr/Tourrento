@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tourrento.DAL.Models.JoinTables;
 
 namespace Tourrento.DAL.Models
 {
@@ -17,5 +18,8 @@ namespace Tourrento.DAL.Models
 
         [Required(ErrorMessage = "A fő kategória megadása kötelező! Ha nincsen, akkor azt kell megadni.")]
         public int? ParentCategoryId { get; set; }
+
+        public ICollection<ItemCategory> ItemCategories { get; set; }
+        public ICollection<RequiredCategoryTour> RequiredCategoryTours { get; set; }
     }
 }

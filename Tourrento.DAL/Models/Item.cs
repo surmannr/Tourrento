@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tourrento.DAL.Models.JoinTables;
 
 namespace Tourrento.DAL.Models
 {
@@ -30,5 +31,10 @@ namespace Tourrento.DAL.Models
         [Required(ErrorMessage = "A felszerelés készletét kötelező megadni!")]
         [Min(0, ErrorMessage = "A felszerelés készlete nem lehet negatív szám.")]
         public int InStock { get; set; }
+
+        public ICollection<RentedItem> RentedItems { get; set; }
+        public ICollection<ItemCart> ItemCarts { get; set; }
+        public ICollection<ItemCategory> ItemCategories { get; set; }
+
     }
 }

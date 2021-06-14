@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 namespace Tourrento.Shared.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class AfterNowWeekLater : ValidationAttribute
+    public class AfterNow : ValidationAttribute
     {
+        public int DaysLater { get; set; } = 0;
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             DateTimeOffset date = (DateTimeOffset)value;
 
-            if (date >= DateTimeOffset.Now.AddDays(7))
+            if (date >= DateTimeOffset.Now.AddDays(DaysLater))
             {
                 return ValidationResult.Success;
             }
