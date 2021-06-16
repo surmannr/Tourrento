@@ -45,6 +45,8 @@ namespace Tourrento.DAL.Models
         [Min(0, ErrorMessage = "Az ár nem lehet negítv szám.")]
         public int Price { get; set; }
 
+        public string ImageName { get; set; }
+
         [ForeignKey(nameof(User))]
         public string CreatorId { get; set; }
         public User Creator { get; set; }

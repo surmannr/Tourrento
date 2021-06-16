@@ -16,7 +16,6 @@ namespace Tourrento.DAL.Models
         [StringLength(100, ErrorMessage = "A kategória maximum 100 karakter hosszú lehet.")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "A fő kategória megadása kötelező! Ha nincsen, akkor azt kell megadni.")]
         public int? ParentCategoryId { get; set; }
 
         public ICollection<ItemCategory> ItemCategories { get; set; }

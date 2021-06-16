@@ -32,6 +32,8 @@ namespace Tourrento.DAL.Models
         [Min(0, ErrorMessage = "A felszerelés készlete nem lehet negatív szám.")]
         public int InStock { get; set; }
 
+        public string ImageName { get; set; }
+
         public ICollection<RentedItem> RentedItems { get; set; }
         public ICollection<ItemCart> ItemCarts { get; set; }
         public ICollection<ItemCategory> ItemCategories { get; set; }

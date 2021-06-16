@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tourrento.DAL.EntityConfigurations;
+using Tourrento.DAL.EntityConfigurations.Joins;
 using Tourrento.DAL.Models;
 using Tourrento.DAL.Models.JoinTables;
 
@@ -104,6 +106,25 @@ namespace Tourrento.DAL
                 .HasOne(e => e.Service)
                 .WithMany(e => e.TourServices)
                 .HasForeignKey(e => e.ServiceId);
+
+            // Konfigurációk
+            builder.ApplyConfiguration(new CategoryEntityConfiguration());
+            builder.ApplyConfiguration(new ItemEntityConfiguration());
+            builder.ApplyConfiguration(new RoleEntityConfiguration());
+            builder.ApplyConfiguration(new UserEntityConfiguration());
+            builder.ApplyConfiguration(new IdentityUserRoleEntityConfiguration());
+            builder.ApplyConfiguration(new TourEntityConfiguration());
+            builder.ApplyConfiguration(new PostEntityConfiguration());
+            builder.ApplyConfiguration(new RentEntityConfiguration());
+            builder.ApplyConfiguration(new ServiceEntityConfiguration());
+
+            // Konfigurációk a kapcsolásokhoz
+            builder.ApplyConfiguration(new ItemCartEntityConfiguration());
+            builder.ApplyConfiguration(new ItemCategoryEntityConfiguration());
+            builder.ApplyConfiguration(new ParticipateTourEntityConfiguration());
+            builder.ApplyConfiguration(new RentedItemEntityConfiguration());
+            builder.ApplyConfiguration(new RequiredCategoryEntityConfiguration());
+            builder.ApplyConfiguration(new TourServiceEntityConfiguration());
         }
     }
 }
