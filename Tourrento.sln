@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourrento.Server", "Tourrento\Server\Tourrento.Server.csproj", "{EAC46EFC-8B2F-4B17-ADCF-082B1F2EB779}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourrento.Server", "Tourrento\Server\Tourrento.Server.csproj", "{EAC46EFC-8B2F-4B17-ADCF-082B1F2EB779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourrento.Client", "Tourrento\Client\Tourrento.Client.csproj", "{46CC675D-41F0-4F2F-88B4-CB1E5FC1030A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourrento.Client", "Tourrento\Client\Tourrento.Client.csproj", "{46CC675D-41F0-4F2F-88B4-CB1E5FC1030A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourrento.Shared", "Tourrento\Shared\Tourrento.Shared.csproj", "{7FDCD494-CF44-4580-8E3E-5519DA0A6F59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourrento.Shared", "Tourrento\Shared\Tourrento.Shared.csproj", "{7FDCD494-CF44-4580-8E3E-5519DA0A6F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourrento.DAL", "Tourrento.DAL\Tourrento.DAL.csproj", "{DC2A3D82-CB51-48E0-9AB8-75359F7ECE79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tourrento.DAL", "Tourrento.DAL\Tourrento.DAL.csproj", "{DC2A3D82-CB51-48E0-9AB8-75359F7ECE79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourrento.BLL", "Tourrento.BLL\Tourrento.BLL.csproj", "{62F8AEBA-3357-4618-AFCF-1A293DF7BAF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DC2A3D82-CB51-48E0-9AB8-75359F7ECE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC2A3D82-CB51-48E0-9AB8-75359F7ECE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC2A3D82-CB51-48E0-9AB8-75359F7ECE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F8AEBA-3357-4618-AFCF-1A293DF7BAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F8AEBA-3357-4618-AFCF-1A293DF7BAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F8AEBA-3357-4618-AFCF-1A293DF7BAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F8AEBA-3357-4618-AFCF-1A293DF7BAF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

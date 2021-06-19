@@ -4,9 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tourrento.DAL.Models.JoinTables;
 
-namespace Tourrento.DAL.Models
+namespace Tourrento.Shared.Dto
 {
     public class Item
     {
@@ -32,10 +31,5 @@ namespace Tourrento.DAL.Models
         public int InStock { get; set; }
 
         public string ImageName { get; set; }
-
-        public ICollection<RentedItem> RentedItems { get; set; }
-        public ICollection<ItemCart> ItemCarts { get; set; }
-        public ICollection<ItemCategory> ItemCategories { get; set; }
-
     }
 }

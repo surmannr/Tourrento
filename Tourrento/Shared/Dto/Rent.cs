@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tourrento.DAL.Models.JoinTables;
 using Tourrento.Shared.Attributes;
 
-namespace Tourrento.DAL.Models
+namespace Tourrento.Shared.Dto
 {
     public class Rent
     {
@@ -30,10 +28,6 @@ namespace Tourrento.DAL.Models
         [Required(ErrorMessage = "A szerződést kötelező megadni, hogy elfogadjuk-e!")]
         public bool AcceptContract { get; set; }
 
-        [ForeignKey(nameof(User))]
         public string UserId { get; set; }
-        public User User { get; set; }
-
-        public ICollection<RentedItem> RentedItems { get; set; }
     }
 }

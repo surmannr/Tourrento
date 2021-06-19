@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tourrento.DAL.Models.JoinTables;
 using Tourrento.Shared.Attributes;
 using Tourrento.Shared.Owned;
 
-namespace Tourrento.DAL.Models
+namespace Tourrento.Shared.Dto
 {
-    public class Tour
+    public class TourDetails
     {
         public int Id { get; set; }
 
@@ -25,7 +23,7 @@ namespace Tourrento.DAL.Models
 
         [Required(ErrorMessage = "A túra befejező dátumának kitöltése kötelező!")]
         [AfterNow(DaysLater = 7, ErrorMessage = "A túra vége és a létrehozása között minimum egy hétnek el kell telni.")]
-        [AfterDate(DateName = "StartDate",ErrorMessage = "A túra vége nem lehet korábban a túra kezdeténél.")]
+        [AfterDate(DateName = "StartDate", ErrorMessage = "A túra vége nem lehet korábban a túra kezdeténél.")]
         public DateTimeOffset EndDate { get; set; }
 
         [Required(ErrorMessage = "A túraútvonal kiinduló helyének kitöltése kötelező!")]
@@ -45,14 +43,13 @@ namespace Tourrento.DAL.Models
         public int Price { get; set; }
 
         public string ImageName { get; set; }
-
-        [ForeignKey(nameof(User))]
         public string CreatorId { get; set; }
-        public User Creator { get; set; }
+        public string CreatorName { get; set; }
+
+        public int ParticipatedCount { get; set; }
 
         public ICollection<Post> Posts { get; set; }
-        public ICollection<ParticipateTour> ParticipateTours { get; set; }
-        public ICollection<RequiredCategoryTour> RequiredCategoryTours { get; set; }
-        public ICollection<TourService> TourServices { get; set; }
+        public ICollection<Category> RequiredCategories { get; set; }
+        public ICollection<Service> Services { get; set; }
     }
 }

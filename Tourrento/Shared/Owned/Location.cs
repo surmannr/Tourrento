@@ -1,5 +1,4 @@
-﻿using DataAnnotationsExtensions;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +20,7 @@ namespace Tourrento.Shared.Owned
         public string City { get; set; }
 
         [Required(ErrorMessage = "Az írányítószám kitöltése kötelező!")]
-        [Min(0, ErrorMessage = "Az írányítószám nem lehet negatív.")]
+        [Range(0, int.MaxValue, ErrorMessage = "Az írányítószám nem lehet negatív.")]
         public int ZipCode { get; set; }
 
         [Required(ErrorMessage = "Az ország kitöltése kötelező!")]

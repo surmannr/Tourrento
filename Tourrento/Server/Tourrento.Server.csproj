@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Tourrento.BLL\Tourrento.BLL.csproj" />
     <ProjectReference Include="..\..\Tourrento.DAL\Tourrento.DAL.csproj" />
     <ProjectReference Include="..\Client\Tourrento.Client.csproj" />
     <ProjectReference Include="..\Shared\Tourrento.Shared.csproj" />

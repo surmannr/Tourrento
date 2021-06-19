@@ -10,7 +10,7 @@ using Tourrento.DAL;
 namespace Tourrento.DAL.Migrations
 {
     [DbContext(typeof(TourrentoDbContext))]
-    [Migration("20210616161001_Initial")]
+    [Migration("20210619074629_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -154,21 +154,21 @@ namespace Tourrento.DAL.Migrations
                         new
                         {
                             Id = "FELHASZNALÓ",
-                            ConcurrencyStamp = "092a0244-66ff-428e-809c-7b0a479767f8",
+                            ConcurrencyStamp = "2631879b-6228-43bb-969a-4f40b8df81f3",
                             Name = "Felhasznaló",
                             NormalizedName = "FELHASZNALÓ"
                         },
                         new
                         {
                             Id = "SZERVEZŐ",
-                            ConcurrencyStamp = "7cdcf613-5a08-428a-b3db-b95a7b18169d",
+                            ConcurrencyStamp = "547d8c4f-b4aa-4c6f-b8f8-902068c48a32",
                             Name = "Szervező",
                             NormalizedName = "SZERVEZŐ"
                         },
                         new
                         {
                             Id = "ADMIN",
-                            ConcurrencyStamp = "66910755-f69f-45a6-8a8f-d3064d316406",
+                            ConcurrencyStamp = "c52af7c7-f2ca-4c73-8e83-5e09747925e7",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -1053,36 +1053,36 @@ namespace Tourrento.DAL.Migrations
                         {
                             Id = 1,
                             AcceptContract = true,
-                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 16, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(9687), new TimeSpan(0, 2, 0, 0, 0)),
+                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 19, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(1444), new TimeSpan(0, 2, 0, 0, 0)),
                             TotalPrice = 2000,
-                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 17, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(9910), new TimeSpan(0, 2, 0, 0, 0)),
+                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 20, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(1662), new TimeSpan(0, 2, 0, 0, 0)),
                             UserId = "seedtwo"
                         },
                         new
                         {
                             Id = 2,
                             AcceptContract = true,
-                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 16, 18, 10, 0, 671, DateTimeKind.Unspecified).AddTicks(561), new TimeSpan(0, 2, 0, 0, 0)),
+                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 19, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(2246), new TimeSpan(0, 2, 0, 0, 0)),
                             TotalPrice = 3000,
-                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 17, 18, 10, 0, 671, DateTimeKind.Unspecified).AddTicks(571), new TimeSpan(0, 2, 0, 0, 0)),
+                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 20, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(2256), new TimeSpan(0, 2, 0, 0, 0)),
                             UserId = "seedthree"
                         },
                         new
                         {
                             Id = 3,
                             AcceptContract = true,
-                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 16, 18, 10, 0, 671, DateTimeKind.Unspecified).AddTicks(576), new TimeSpan(0, 2, 0, 0, 0)),
+                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 19, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(2260), new TimeSpan(0, 2, 0, 0, 0)),
                             TotalPrice = 1000,
-                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 17, 18, 10, 0, 671, DateTimeKind.Unspecified).AddTicks(579), new TimeSpan(0, 2, 0, 0, 0)),
+                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 20, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(2263), new TimeSpan(0, 2, 0, 0, 0)),
                             UserId = "seedtwo"
                         },
                         new
                         {
                             Id = 4,
                             AcceptContract = true,
-                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 16, 18, 10, 0, 671, DateTimeKind.Unspecified).AddTicks(582), new TimeSpan(0, 2, 0, 0, 0)),
+                            RentalDate = new DateTimeOffset(new DateTime(2021, 6, 19, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(2266), new TimeSpan(0, 2, 0, 0, 0)),
                             TotalPrice = 5000,
-                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 17, 18, 10, 0, 671, DateTimeKind.Unspecified).AddTicks(585), new TimeSpan(0, 2, 0, 0, 0)),
+                            UntilDate = new DateTimeOffset(new DateTime(2021, 6, 20, 9, 46, 29, 465, DateTimeKind.Unspecified).AddTicks(2269), new TimeSpan(0, 2, 0, 0, 0)),
                             UserId = "seedthree"
                         });
                 });
@@ -1177,48 +1177,48 @@ namespace Tourrento.DAL.Migrations
                             Id = 1,
                             CreatorId = "seedone",
                             Description = "Gyere el velünk a legjobb János-hegyi túrára! Ajánlott védőfelszerelés, mert a túra során mászásra is sor kerülhet.",
-                            EndDate = new DateTimeOffset(new DateTime(2021, 7, 8, 18, 10, 0, 669, DateTimeKind.Unspecified).AddTicks(8359), new TimeSpan(0, 2, 0, 0, 0)),
+                            EndDate = new DateTimeOffset(new DateTime(2021, 7, 11, 9, 46, 29, 463, DateTimeKind.Unspecified).AddTicks(9969), new TimeSpan(0, 2, 0, 0, 0)),
                             ImageName = "tour1.jpg",
                             MaxNumberOfPeople = 18,
                             Name = "János-hegyi túra",
                             Price = 2000,
-                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 7, 18, 10, 0, 668, DateTimeKind.Unspecified).AddTicks(2955), new TimeSpan(0, 2, 0, 0, 0))
+                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 10, 9, 46, 29, 462, DateTimeKind.Unspecified).AddTicks(3701), new TimeSpan(0, 2, 0, 0, 0))
                         },
                         new
                         {
                             Id = 2,
                             CreatorId = "seedone",
                             Description = "Gyere el velünk a legjobb Gellért-hegyi túrára! Ajánlott védőfelszerelés, mert a túra során mászásra is sor kerülhet.",
-                            EndDate = new DateTimeOffset(new DateTime(2021, 7, 19, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(2222), new TimeSpan(0, 2, 0, 0, 0)),
+                            EndDate = new DateTimeOffset(new DateTime(2021, 7, 22, 9, 46, 29, 464, DateTimeKind.Unspecified).AddTicks(3981), new TimeSpan(0, 2, 0, 0, 0)),
                             ImageName = "tour2.jpg",
                             MaxNumberOfPeople = 30,
                             Name = "Gellért-hegyi túra",
                             Price = 1800,
-                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 19, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(2205), new TimeSpan(0, 2, 0, 0, 0))
+                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 22, 9, 46, 29, 464, DateTimeKind.Unspecified).AddTicks(3963), new TimeSpan(0, 2, 0, 0, 0))
                         },
                         new
                         {
                             Id = 3,
                             CreatorId = "seedone",
                             Description = "A több napos túra során rengeteg kalandban veszünk majd részt. Az étkezés és alvást a túra szervezői biztosítják.",
-                            EndDate = new DateTimeOffset(new DateTime(2021, 8, 3, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(2368), new TimeSpan(0, 2, 0, 0, 0)),
+                            EndDate = new DateTimeOffset(new DateTime(2021, 8, 6, 9, 46, 29, 464, DateTimeKind.Unspecified).AddTicks(4148), new TimeSpan(0, 2, 0, 0, 0)),
                             ImageName = "tour3.jpg",
                             MaxNumberOfPeople = 32,
                             Name = "Több napos túra",
                             Price = 42800,
-                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 24, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(2363), new TimeSpan(0, 2, 0, 0, 0))
+                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 27, 9, 46, 29, 464, DateTimeKind.Unspecified).AddTicks(4142), new TimeSpan(0, 2, 0, 0, 0))
                         },
                         new
                         {
                             Id = 4,
                             CreatorId = "seedone",
                             Description = "A biciklizés során a fő célunk, hogy mindenki jól érezze magát. A túra során a pihenőkön közös programokat szervezünk, hogy a csapatot jobban összekovácsoljuk.",
-                            EndDate = new DateTimeOffset(new DateTime(2021, 7, 20, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(2554), new TimeSpan(0, 2, 0, 0, 0)),
+                            EndDate = new DateTimeOffset(new DateTime(2021, 7, 23, 9, 46, 29, 464, DateTimeKind.Unspecified).AddTicks(4332), new TimeSpan(0, 2, 0, 0, 0)),
                             ImageName = "tour4.jpg",
                             MaxNumberOfPeople = 12,
                             Name = "Hegyi biciklizés",
                             Price = 1800,
-                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 20, 18, 10, 0, 670, DateTimeKind.Unspecified).AddTicks(2548), new TimeSpan(0, 2, 0, 0, 0))
+                            StartDate = new DateTimeOffset(new DateTime(2021, 7, 23, 9, 46, 29, 464, DateTimeKind.Unspecified).AddTicks(4326), new TimeSpan(0, 2, 0, 0, 0))
                         });
                 });
 
@@ -1295,17 +1295,17 @@ namespace Tourrento.DAL.Migrations
                         {
                             Id = "seedone",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f4c96927-0181-4426-9d20-c62aca099ac0",
+                            ConcurrencyStamp = "36585d9d-c4c2-4198-b5c7-87a16d26d9b4",
                             Email = "tesztelek@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Teszt Elek",
                             NormalizedEmail = "TESZTELEK@GMAIL.COM",
                             NormalizedUserName = "TESZTELEK",
-                            PasswordHash = "AQAAAAEAACcQAAAAECPX9dqiUQ3jeQBbEnO2p8JFHpZe6lx0szwlF4t3PBS82xrfVK6VoBDR2lm8iZK8pA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ3CmmiotK12ecaCKHgyiBsvpM+7NhoPCXT+vMrJx7kceGqdK/U++inoxdBH+x58lA==",
                             PhoneNumber = "06/30-152-5123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7f2d9a16-1cd9-45ea-869a-4e7c10cfe6c2",
+                            SecurityStamp = "09b7798f-f38a-43ae-96ee-4d38ca568421",
                             TwoFactorEnabled = false,
                             UserName = "tesztelek"
                         },
@@ -1313,17 +1313,17 @@ namespace Tourrento.DAL.Migrations
                         {
                             Id = "seedtwo",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1ed698e4-8368-463e-a5bd-8c30750cc06a",
+                            ConcurrencyStamp = "c205899b-3409-4c48-bb33-ea713f263d3d",
                             Email = "wincheszter@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Winch Eszter",
                             NormalizedEmail = "WINCHESZTER@GMAIL.COM",
                             NormalizedUserName = "WINCHESZTER",
-                            PasswordHash = "AQAAAAEAACcQAAAAECaehXJu0t/4OzOKFKT3VYfsocmERzfq9kyRiHOo0RIJ5tXO8V50hPLXVi10axEeJw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIK3N8y2BVyx6T7lxRF4Y3Aq7UPAk2vRDl20u8U/EBdDk1CZfVmZJ+9Qdu6zM1Yj3A==",
                             PhoneNumber = "06/30-152-5123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4e728a01-59f2-49ac-b55f-0fad23bf60da",
+                            SecurityStamp = "009d7929-0ebd-405b-b701-3ef4b9399e21",
                             TwoFactorEnabled = false,
                             UserName = "wincheszter"
                         },
@@ -1331,17 +1331,17 @@ namespace Tourrento.DAL.Migrations
                         {
                             Id = "seedthree",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d867e523-7678-4d48-b70b-744684360e67",
+                            ConcurrencyStamp = "4f5a93a4-6eca-40a9-9056-58e68b541b0d",
                             Email = "kbela@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Kis Béla",
                             NormalizedEmail = "KBELA@GMAIL.COM",
                             NormalizedUserName = "KBELA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHfqmLoNpb/Ed1PBDCA6HOEBG3exwpasO5fUMrZhcLT51qMLy25jkezZrAVhmb2NBg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAf4iiHXc52o5ldLYc8eqKW14kSHUxwNE77J6Oz1YOV95GbEnFv8tS3WHvqJhMLL1g==",
                             PhoneNumber = "06/30-152-5123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "af2c4768-0c58-4c09-963e-37a5dddd1641",
+                            SecurityStamp = "3ef5cc07-6941-4fda-984b-4a980578b420",
                             TwoFactorEnabled = false,
                             UserName = "kbela"
                         },
@@ -1349,17 +1349,17 @@ namespace Tourrento.DAL.Migrations
                         {
                             Id = "admin",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "98873fe4-723f-49c8-b4a6-09b53cea8f80",
+                            ConcurrencyStamp = "d86cf38f-94c6-47cd-8633-8f89cf4b7339",
                             Email = "admin@tourrento.hu",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "ADMIN@TOURRENTO.HU",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOiFsY/ie2QZR3g8Z6XfFPcVcPnahz2g4LTT2N4c7H7yIVToOh35sADw053mMs4dCw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGXkdygXSIf/+LvAuKSnL450+/PMVcQ2CI8aVDI/cr6vKUsLygaRrsFbIqxuxUDaHw==",
                             PhoneNumber = "06/30-152-5123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "99edf23c-f1e9-47cb-a10d-63a55dbf4afc",
+                            SecurityStamp = "65e20166-467d-490b-b257-c7cc96c56f90",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
