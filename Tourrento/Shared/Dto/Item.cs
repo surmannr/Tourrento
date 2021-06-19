@@ -29,6 +29,7 @@ namespace Tourrento.Shared.Dto
         [Required(ErrorMessage = "A felszerelés készletét kötelező megadni!")]
         [Range(0, int.MaxValue, ErrorMessage = "A felszerelés készlete nem lehet negatív szám.")]
         public int InStock { get; set; }
+        public bool Available { get; set; }
 
         public string ImageName { get; set; }
     }

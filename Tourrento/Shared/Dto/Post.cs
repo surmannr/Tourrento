@@ -19,6 +19,8 @@ namespace Tourrento.Shared.Dto
         public string Answer { get; set; }
 
         public string QuestionerId { get; set; }
+        public string QuestionerUserName { get; set; }
+        public string QuestionerName { get; set; }
         public int TourId { get; set; }
     }
 }
