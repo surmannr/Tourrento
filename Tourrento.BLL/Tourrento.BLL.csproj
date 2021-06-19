@@ -6,10 +6,21 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Tourrento.DAL\Tourrento.DAL.csproj" />
+    <ProjectReference Include="..\Tourrento\Shared\Tourrento.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Item\" />
+    <Folder Include="User\" />
+    <Folder Include="Tour\" />
+    <Folder Include="Service\" />
+    <Folder Include="Rent\" />
+    <Folder Include="Post\" />
   </ItemGroup>
 
 </Project>

@@ -1,13 +1,22 @@
+﻿using Hellang.Middleware.ProblemDetails;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System;
 using System.Linq;
+using Tourrento.BLL.Automapper;
+using Tourrento.BLL.Category.Queries;
+using Tourrento.BLL.Mediator;
 using Tourrento.DAL;
 using Tourrento.DAL.Models;
 
@@ -33,13 +42,57 @@ namespace Tourrento.Server
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<TourrentoDbContext>();
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<TourrentoDbContext>()
+                .AddDefaultTokenProviders();
+                //.AddClaimsPrincipalFactory<MyUserClaimsPrincipalFactory>();
+
+            services.AddAutoMapper(typeof(MapProfile));
 
             services.AddIdentityServer()
                 .AddApiAuthorization<User, TourrentoDbContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/access-denied";
+                options.LoginPath = "/login";
+                options.LogoutPath = "/logout";
+            });
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Tourrento API",
+                    Description = "Szakdolgozat BME 2021",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Surmann Roland",
+                        Email = "surmannroland@gmail.com"
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under LICX",
+                        Url = new Uri("https://example.com/license"),
+                    }
+                });
+                c.EnableAnnotations();
+                // Set the comments path for the Swagger JSON and UI.
+                //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                //c.IncludeXmlComments(xmlPath);
+            });
+
+            services.AddMediatR(typeof(GetCategories));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
+
             services.AddAuthentication()
                 .AddIdentityServerJwt();
+
+            services.AddProblemDetails(ConfigureProblemDetails).AddControllers()
+                .AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -66,10 +119,22 @@ namespace Tourrento.Server
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseProblemDetails();
 
             app.UseIdentityServer();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
+
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tourrento");
+                c.RoutePrefix = "swagger";
+            });
 
             app.UseEndpoints(endpoints =>
             {
@@ -78,5 +143,17 @@ namespace Tourrento.Server
                 endpoints.MapFallbackToFile("index.html");
             });
         }
+
+        private void ConfigureProblemDetails(ProblemDetailsOptions options)
+        {
+            // DbNullException -> NotFound : Ha nem találja meg az adott entitást, akkor NotFound-dal tér vissza.
+            //options.MapToStatusCode<DbNullException>(StatusCodes.Status404NotFound);
+            // InvalidQueryParamsException -> BadRequest : Ha a kötelezõ paraméterek nincsenek kitöltve (azaz null), akkor BadRequest-tel tér vissza.
+            //options.MapToStatusCode<InvalidQueryParamsException>(StatusCodes.Status400BadRequest);
+
+            options.MapToStatusCode<Exception>(StatusCodes.Status500InternalServerError);
+        }
+
     }
+
 }
